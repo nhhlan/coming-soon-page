@@ -129,16 +129,11 @@ nav
             "content hero"
         ;
         padding: 0;
-        background: none;
-    }
-    svg
-    {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
+        background-image: url('images/bg-pattern-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
         background-color: hsl(0, 100%, 98%);
-    }
+    } 
     nav 
     { 
         grid-area: logo; 
