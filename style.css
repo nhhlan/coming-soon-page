@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+*, *::before, *::after
+{
+    box-sizing: border-box;
+}
+html, body, p
+{
+    margin: 0;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 16px;
+    color: hsl(0, 36%, 70%);
+}
+
+main
+{
+    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    width: 100vw;
+    padding-bottom: 2rem;
+}
+nav
+{
+    padding: 2rem 2rem 0;
+}
+.hero
+{
+    width: 100vw;
+}
+.hero img
+{
+    width: 100%;
+    margin: 2rem 0;
+}
+.content
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2em;
+    text-align: center;
+}
+.content--text, .content--input
+{
+    margin-top: 2rem;
+}
+.content--heading > p
+{
+    font-weight: 400;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+.content--heading span
+{
+    color: hsl(0, 6%, 24%);
+}
+.content--text
+{
+    line-height: 1.5;
+}
+.content--input
+{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    position: relative;
+}
+.content--input input
+{
+    outline: 0;
+    border: 1px solid hsl(0, 6%, 24%);
+    border-radius: 1.5rem;
+    opacity: 65%;
+    width: 100%;
+    line-height: 50%;
+    transform: translateX(15%);
+    padding-left: 1rem;
+}
+.content--input input:focus
+{
+    border: 1px solid hsl(0, 93%, 68%);
+}
+.content--input img
+{
+    position: absolute;
+    top: 0.75rem;
+    right: 30%;
+    z-index: 1;
+    display: none;
+}
+.content--input a
+{
+    transform: translateX(-15%);
+    width: 30%;
+}
+.content--input a::before
+{
+    display: block;
+    content: url('images/icon-arrow.svg');
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    height: 3rem;
+    width: 100%;
+    border-radius: 1.5rem;
+    line-height: 50%;
+    padding-top: 1rem;
+    text-align: center;
+}
+.content--input a:hover::before
+{
+   filter: brightness(125%)
+}
+#message
+{
+    color: hsl(0, 93%, 68%);
+    margin-top: 0.5rem;
+    margin-left: -0.5rem;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+@media screen and (min-width: 50em)
+{
+    main
+    {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+        grid-template-areas: 
+            "logo hero"
+            "content hero"
+        ;
+        padding: 0;
+        background: none;
+    }
+    svg
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-color: hsl(0, 100%, 98%);
+    }
+    nav 
+    { 
+        grid-area: logo; 
+        padding: 6rem 8rem 0;
+    }
+    nav img
+    {
+        width: 15vw;
+    }
+    .hero 
+    { 
+        grid-area: hero;
+        width: 100%;
+    }
+    .content 
+    { 
+        grid-area: content; 
+        justify-content: flex-start;
+        padding: 0 8rem;
+        text-align: left;
+    }
+    .content--heading > p
+    {
+        font-size: 4rem;
+        font-weight: 600;
+        letter-spacing: 6px;
+    }
+    .content--input
+    {
+        width: 100%;
+    }
+    .content--input input
+    {
+        transform: translateX(0);
+    }
+    .content--input img
+    {
+        right: 37%;
+    }
+    .content--input a
+    {
+        transform: translateX(-50%);
+    }
+    #message
+    {
+        margin-left: 1rem;
+        margin-right: auto;
+    }
+    .hero img { margin: 0; }
+}
